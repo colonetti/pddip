@@ -1,14 +1,20 @@
-# pddip
+[![Sparhtacus](https://sparhtacus.com/wp-content/uploads/2020/12/spt-hzG.png)](https://sparhtacus.com/sobre/)
 
-This is the source code of the (P)arallel (D)ual (D)ynamic (i)nteger (P)rogramming algorithm. 
+Modelo computacional open-source para unit commitment hidrotérmico em Python. 
+
+Programa open-source distribuído sob [licença MIT](https://github.com/SPARHTACUS/SPTpy/blob/main/LICENSE.md). 
+
+# PDDiP (P)arallel (D)ual (D)ynamic (i)nteger (P)rogramming
+
+This is the source code of the PDDiP algorithm.
 
 All input and output data are in .csv. We use Case 1 of our test system called 'SIN' to describe the input and output data below.
 
-# **Input data**
+## **Input data**
 
 **Network**: (network - SIN.csv) contains the buses and transmission lines, along with their reactances in p.u. in a 100-MW base and limits in MW
 
-**Power plants**: (powerPlants - SIN.csv) hydro reservoirs and thermal generating units. The cascade configurations for the reservoirs are given in this file, as well as the default bounds on reservoir volumes in hm<sup>3</sup> and spillage in (m<sup>3</sup>/s). For the thermal generating units, the bounds in generation are given in MW, the ramping limits are in MW/h, the default generation costs are in $/(MWh/h), and the minimum up and down-times are given in hours. The cost of load curtailment is given in $/(MWh/h).
+**Power plants**: (powerPlants - SIN.csv) hydro reservoirs and thermal generating units. The cascade configurations for the reservoirs are given in this file, as well as the default bounds on reservoir volumes in hm<sup>3</sup> and spillage in (m<sup>3</sup>/s). For the thermal generating units, the bounds in generation are given in MW, the ramping limits are in MW/h, the default generation costs are in `$`/(MWh/h), and the minimum up and down-times are given in hours. The cost of load curtailment is given in `$`/(MWh/h).
 
 **Data of hydro generating units**: (dataOfGeneratingUnits - SIN.csv). In this work, we aggregate the generating units of the hydro plants and we neglect all forbidden zones. Nonetheless, data of turbine discharge, pumping rates and connection buses are taken from the data of hydro generating units given in this file.
 
@@ -38,7 +44,7 @@ All input and output data are in .csv. We use Case 1 of our test system called '
 
 **Reset generation costs**: (reset generation costs of thermal units - SIN - case 1.csv) the costs might change from case to case due to variation in fuel costs. The costs are given in $/(MWh/h).
 
-# **Output data**
+## **Output data**
 
 **Final results**: (final results - SIN - case 1.csv) stores the present cost, future cost (as given by the cost-to-go function), and total cost associated with the best solution found.
 
